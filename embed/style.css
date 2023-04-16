@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+body {
+    background-color: #232328;
+    min-height: 100vh;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+:root {
+    --card: #313338;
+    --primary: #232328;
+    --primary2: #4169E1FF;
+    --embed: #2B2D31;
+}
+
+main {
+    padding: 10px;
+}
+
+#jsonResponse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    outline: none;
+    padding: 16px;
+    background-color: var(--card);
+    border-radius: 7px;
+}
+
+#jsonResponse::backdrop {
+    background-color: rgba(0,0,0,.75);
+}
+
+#jsonCode {
+    width: 800px;
+    height: 400px;
+    color: #ccc;
+    background-color: var(--embed);
+    border: none;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    gap: 16px;
+}
+
+#configure {
+    width: 50%;
+    background-color: var(--card);
+    border-radius: 12px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.buttons {
+    margin-bottom: 20px;
+}
+
+#showCode {
+    padding: 8px 16px;
+    background-color: var(--primary2);
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.controller {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    position: relative;
+}
+
+.controller label {
+    font-size: 14px;
+    color: #c5c5c5;
+}
+
+.controller .input:not([type="color"]) {
+    position: relative;
+    resize: vertical;
+    border-radius: 4px;
+    border: 1px solid black;
+    padding: 8px 4px;
+    color: #ccc;
+    outline: none;
+    background-color: var(--primary);
+}
+
+.controller .input[type="color"] {
+    background-color: var(--primary);
+    border: 1px solid black;
+    outline: none;
+    border-radius: 4px;
+    padding: 8px 4px;
+    height: 40px;
+    width: 100%;
+}
+
+.controller::after {
+    content: attr(data-length);
+    position: absolute;
+    right: 6px;
+    color: #aaa;
+    font-size: 10px;
+    bottom: 0;
+}
+
+#preview {
+    width: 50%;
+    background-color: var(--card);
+    padding: 8px 16px;
+    border-radius: 7px;
+}
+
+#embed {
+    min-height: 30px;
+    border-left: 3px solid aqua;
+    background-color: var(--embed);
+    padding: 8px;
+    width: 100%;
+    border-radius: 4px;
+}
+
+#embed div {
+    overflow-x: hidden;
+    word-break: break-word;
+    color: #eee;
+    font-weight: 400;
+    display: none;
+}
+
+#embed .title {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#embed .description {
+    font-size: 13px;
+}
+
+#embed .footer {
+    font-size: 12px;
+}
