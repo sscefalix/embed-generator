@@ -32,6 +32,25 @@ main {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    border: none;
+    outline: none;
+    padding: 16px;
+    background-color: var(--card);
+    border-radius: 7px;
+}
+
+#jsonResponse::backdrop {
+    background-color: rgba(0,0,0,.75);
+}
+
+#jsonCode {
+    width: 800px;
+    height: 400px;
+    color: #ccc;
+    background-color: var(--embed);
+    border: none;
+    padding: 4px;
+    border-radius: 4px;
 }
 
 .wrapper {
