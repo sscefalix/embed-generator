@@ -2,9 +2,10 @@ const embed = document.getElementById("embed")
 const embedFields = {}
 const code = {}
 const controllers = document.querySelectorAll(".controller")
-const color = document.getElementById("color")
 const showCodeBtn = document.getElementById("showCode")
+const color = document.getElementById("color")
 const modal = document.getElementById("jsonResponse")
+const jsonCode = document.getElementById("jsonCode")
 
 embed.querySelectorAll("div").forEach((element) => embedFields[element.className] = element)
 
@@ -30,11 +31,14 @@ controllers.forEach((controller) => {
 })
 
 color.oninput = (event) => {
+    code["color"] = color.value
     embed.style.borderColor = color.value
 }
 
 showCodeBtn.onclick = (event) => {
     event.preventDefault()
+
+    jsonCode.innerHTML = JSON.stringify(code, null, 4)
 
     modal.showModal()
 }
